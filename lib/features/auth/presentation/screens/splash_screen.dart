@@ -35,10 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             Expanded(
-                child: Center(
-                  child: AppLogo(
-                      height: 120
-                  ),
+                child: AppLogo(
+                    height: 120
                 )
             ),
             CircularProgressIndicator()
