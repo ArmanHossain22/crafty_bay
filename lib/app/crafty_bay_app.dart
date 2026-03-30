@@ -21,19 +21,20 @@ class CraftyBayApp extends StatelessWidget {
       child: Consumer<LanguageProvider>(
         builder: (context, languageProvider, child){
           return MaterialApp(
-              title: 'Flutter Demo',
-              theme: AppThemes.lightTheme,
-              darkTheme: AppThemes.darkTheme,
-              initialRoute: "/",
-              onGenerateRoute: AppRoutes.onGenerateRoute,
-              localizationsDelegates: [
-                AppLocalizations.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: languageProvider.supportedLocales,
-              locale: languageProvider.currentLocale
+            title: 'Flutter Demo',
+            theme: AppThemes.lightTheme,
+            darkTheme: AppThemes.darkTheme,
+            initialRoute: "/",
+            onGenerateRoute: AppRoutes.onGenerateRoute,
+            localizationsDelegates: [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: languageProvider.supportedLocales,
+            locale: languageProvider.currentLocale,
+            themeMode: ThemeMode.light,
           );
         }
       ),
