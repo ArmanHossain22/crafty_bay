@@ -1,3 +1,5 @@
+import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../app/extensions/utils_extension.dart';
@@ -35,6 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 children: [
+                  SizedBox(height: 48),
                   AppLogo(),
                   SizedBox(height: 24),
                   Text('Sign Up With Email', style: context.textTheme.titleLarge),
@@ -92,7 +95,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   FilledButton(
                     onPressed: _onTapSignUpButton,
                     child: Text("Sign Up")
-                  )
+                  ),
+                  const SizedBox(height: 16),
+                  TextButton(
+                    onPressed: _onTapSignInTextButton,
+                    child: Text("Already have an account? Sign In")
+                  ),
                 ],
               ),
             ),
@@ -115,6 +123,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void _onTapSignUpButton()
   {
+    Navigator.pushNamed(context, VerifyOtpScreen.name);
+  }
 
+  void _onTapSignInTextButton()
+  {
+    Navigator.pushNamed(context, SignInScreen.name);
   }
 }

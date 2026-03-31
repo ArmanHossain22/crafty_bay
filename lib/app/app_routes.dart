@@ -1,5 +1,7 @@
+import 'package:crafty_bay/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/screens/splash_screen.dart';
+import 'package:crafty_bay/features/auth/presentation/screens/verify_otp_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
@@ -12,6 +14,12 @@ class AppRoutes {
         break;
       case SignUpScreen.name :
         widget = const SignUpScreen();
+        break;
+      case SignInScreen.name :
+        widget = const SignInScreen();
+        break;
+      case VerifyOtpScreen.name :
+        widget = const VerifyOtpScreen();
         break;
     }
     return MaterialPageRoute(builder: (context) => widget);
