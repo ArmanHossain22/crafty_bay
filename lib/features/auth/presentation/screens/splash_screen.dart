@@ -1,5 +1,5 @@
-import 'package:crafty_bay/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:crafty_bay/features/auth/presentation/widgets/app_logo.dart';
+import 'package:crafty_bay/features/shared/presentation/screens/main_nav_holder_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Future<void> _navigateToNextScreen() async
   {
     await Future.delayed(const Duration(seconds: 2));
-    Navigator.pushReplacementNamed(context, SignUpScreen.name);
+    Navigator.pushReplacementNamed(context, MainNavHolderScreen.name);
   }
 
   @override
@@ -35,9 +35,9 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
             Expanded(
-                child: AppLogo(
-                    height: 120
-                )
+              child: AppLogo(
+                height: 120
+              )
             ),
             CircularProgressIndicator()
           ],
