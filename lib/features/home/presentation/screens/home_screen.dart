@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../app/asset_paths.dart';
-import '../../../shared/presentation/widgets/home_category_list.dart';
+import '../../../shared/presentation/providers/main_nav_provider.dart';
+import '../widgets/horizontal_product_list.dart';
+import '../widgets/home_category_list.dart';
 import '../widgets/app_bar_icon_button.dart';
 import '../widgets/home_slider.dart';
 import '../widgets/product_search_bar.dart';
@@ -23,20 +26,37 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: _buildAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0),
-        child: Column(
-          spacing: 16,
-          children: [
-            ProductSearchBar(),
-            HomeSlider(),
-            SectionHeader(
-              onTap: ()
-              {
-                
-              },
-              name: "All Categories",
-            ),
-            HomeCategoryList()
-          ],
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            spacing: 16,
+            children: [
+              ProductSearchBar(),
+              HomeSlider(),
+              SectionHeader(
+                onTap: () {
+                  context.read<MainNavProvider>().moveToCategory;
+                },
+                name: "All Categories",
+              ),
+              HomeCategoryList(),
+              SectionHeader(
+                onTap: () {},
+                name: "Popular",
+              ),
+              HorizontalProductList(),
+              SectionHeader(
+                onTap: () {},
+                name: "Special",
+              ),
+              HorizontalProductList(),
+              SectionHeader(
+                onTap: () {},
+                name: "New",
+              ),
+              HorizontalProductList(),
+            ],
+          ),
         ),
       ),
     );

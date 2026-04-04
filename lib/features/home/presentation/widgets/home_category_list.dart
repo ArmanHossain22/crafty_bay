@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'category_card.dart';
+import '../../../shared/presentation/widgets/category_card.dart';
 
 class HomeCategoryList extends StatelessWidget {
   const HomeCategoryList({
